@@ -2,14 +2,18 @@ import React, { Component } from "react";
 
 class Welcome extends Component {
   render() {
-    const { user } = this.props;
+    const { userName, logoutUser } = this.props;
     return (
       <div className="mt-4 text-center">
         <span className="text-secondary font-weight-bold pl-1">
-          Welcome {user},
+          Welcome {userName},
         </span>
 
-        <a href="/" className="font-weight-bold text-primary pl-1">
+        <a
+          href="/"
+          className="font-weight-bold text-primary pl-1"
+          onClick={e => logoutUser(e)}
+        >
           log out
         </a>
       </div>
